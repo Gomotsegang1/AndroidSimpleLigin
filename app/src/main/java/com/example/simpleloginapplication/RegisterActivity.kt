@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -25,8 +26,12 @@ class RegisterActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etRPassword)
         btnReg = findViewById(R.id.btnRegister)
 
+        this.findViewById<TextView>(R.id.tvLoginLink).setOnClickListener{
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         btnReg.setOnClickListener {
-            //Toast.makeText(this, "sussessfull ", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "successful ", Toast.LENGTH_SHORT).show()
             registerUser()
         }
     }
